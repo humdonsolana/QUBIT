@@ -1,0 +1,10 @@
+# Pipeline outputs. Until the create tx confirms, these are the mint's private key.
+private/
+quantum_results.json
+quantum_job_pending.json
+mint_keypair.json
+mint_keypair.b58
+*.tmp
+
+.venv*/
+__pycache__/

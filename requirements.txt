@@ -1,0 +1,5 @@
+# Needed to run the quantum job and derive the keypair.
+# verify.py needs none of these: it runs on the Python standard library alone.
+qiskit==2.5.2
+qiskit-ibm-runtime==0.50.0
+solders==0.29.0
