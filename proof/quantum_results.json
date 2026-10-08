@@ -1,0 +1,54 @@
+{
+  "job_id": "db3vkeclf4us73c206fg",
+  "backend": "ibm_marrakesh",
+  "n_qubits": 16,
+  "n_shots": 16,
+  "submitted_utc": "2026-10-08T20:16:57.528956+00:00",
+  "ibm_timestamps": {
+    "created": "2026-10-08T20:16:57.449768Z",
+    "finished": "2026-10-08T20:17:16.017622Z",
+    "running": "2026-10-08T20:17:08.687622Z"
+  },
+  "physical_qubits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "software": {
+    "qiskit": "2.5.2",
+    "qiskit_ibm_runtime": "0.50.0"
+  },
+  "dry_run": false,
+  "concatenation_rule": "bitstrings exactly as returned by result[0].data.meas.get_bitstrings(), concatenated in shot order (shot 0 first); entropy = first 256 bits packed MSB-first; seed and address rule in verify.py",
+  "bitstrings": [
+    "0101001010101100",
+    "1010001110111011",
+    "0101010011010110",
+    "1000011010010000",
+    "1011011110101111",
+    "0000000000010110",
+    "1110001111011010",
+    "0111011001101000",
+    "0100011011010011",
+    "0010001010110000",
+    "0011011001010100",
+    "0000011111111011",
+    "0000011111100110",
+    "0010011001010111",
+    "0100001111000011",
+    "0101011010101011"
+  ]
+}

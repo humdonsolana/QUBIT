@@ -1,0 +1,25 @@
+{
+  "job_id": "db3vkeclf4us73c206fg",
+  "backend": "ibm_marrakesh",
+  "n_qubits": 16,
+  "n_shots": 16,
+  "physical_qubits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "submitted_utc": "2026-10-08T20:16:57.528956+00:00"
+}
