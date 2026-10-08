@@ -1,0 +1,20 @@
+[package]
+name = "qubit-wots"
+description = "WOTS+ one-time signatures over SHA-256 for the QUBIT vault"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+host = ["dep:sha2"]
+
+[dependencies]
+sha2 = { workspace = true, optional = true }
+
+[dev-dependencies]
+qubit-wots = { path = ".", features = ["host"] }
+proptest.workspace = true
+serde.workspace = true
+serde_json.workspace = true

@@ -65,3 +65,51 @@ python3 src/derive_keypair.py     # search the counter, write the mint keypair t
 ```
 
 Tests: `python3 -m unittest discover -s tests -v`
+
+## QUBIT Vault
+
+QUBIT also ships a vault for Solana whose lock is a hash, not a public key. A normal Solana address is an
+ed25519 public key; if elliptic curves ever fall, to quantum computers or new mathematics, that key gives up its
+private key. A QUBIT vault stores only the SHA-256 hash of its next one-time key. Spending reveals that key as a
+WOTS+ signature (2,144 bytes over 67 SHA-256 chains, the parameters NIST standardized in FIPS 205); the program
+checks it with SHA-256, moves the funds and locks the vault to the next key. 24 words recover everything.
+
+The code is in [`vault/`](vault/): the on-chain program, the `qubit` command-line tool, the signature library and
+an independent Python reference.
+
+Status: not deployed yet and not audited. Program id: `3kQoxmBhrQztTBRVhqkGbMbUcpQpK64cbadrt2y9kbjX`.
+
+```bash
+cd vault
+cargo install --path cli
+qubit keygen                                   # prints 24 words, write them down
+qubit create                                   # creates the vault, prints its address
+qubit balance
+qubit send 1.5 --to <address>                  # SOL
+qubit send 100 --to <address> --mint <mint>    # tokens
+qubit recover                                  # new machine: type the 24 words
+```
+
+Build and test, from `vault/` (Rust 1.85+, Solana CLI 4.2+ with `cargo build-sbf`, Python 3):
+
+```bash
+cargo fmt --all --check
+cargo clippy --workspace --all-targets -- -D warnings
+scripts/build-program.sh
+cargo test --workspace
+python3 -I tests/reference/wots_ref.py --check crates/wots/tests/vectors.json
+scripts/e2e-localnet.sh
+```
+
+Dean Little's [WinterWallet](https://github.com/blueshift-gg/winterwallet) and
+[solana-winternitz](https://github.com/blueshift-gg/solana-winternitz) brought Winternitz signatures to Solana
+first.
+
+## Repository layout
+
+| Path | What it holds |
+| --- | --- |
+| `src/`, `tests/`, `proof/` | The mint proof: job runner, derivation, verifier and the published results |
+| `vault/` | The QUBIT Vault: program, command-line tool, signature library, reference |
+
+The mint proof is MIT licensed. `vault/` is MIT or Apache-2.0, at your option.

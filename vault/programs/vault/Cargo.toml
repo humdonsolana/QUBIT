@@ -1,0 +1,34 @@
+[package]
+name = "qubit-vault"
+description = "Hash-locked Solana vault spending through WOTS+ one-time signatures"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+qubit-interface.workspace = true
+qubit-wots.workspace = true
+pinocchio = { version = "0.11.2", features = ["cpi"] }
+pinocchio-system = "0.6.1"
+
+[target.'cfg(not(target_os = "solana"))'.dependencies]
+solana-address = { version = "2.9.0", features = ["curve25519"] }
+
+[dev-dependencies]
+mollusk-svm = "0.16.0"
+mollusk-svm-programs-token = "0.16.0"
+qubit-wots = { workspace = true, features = ["host"] }
+solana-account = "4"
+solana-instruction = "3"
+solana-program-error = "3"
+solana-pubkey = { version = "4", features = ["curve25519"] }
+
+[lints.rust.unexpected_cfgs]
+level = "warn"
+priority = 0
+check-cfg = ['cfg(target_os, values("solana"))']
