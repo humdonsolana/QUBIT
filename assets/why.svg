@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="462" viewBox="0 0 1200 462" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FBFE66"/>
+      <stop offset="0.5" stop-color="#F8267E"/>
+      <stop offset="1" stop-color="#BE42F8"/>
+    </linearGradient>
+  </defs>
+  <!-- card 1: Ethereum / Bitcoin -->
+  <rect x="20" y="20" width="360" height="390" rx="22" fill="#121217"/>
+  <text x="200" y="66" text-anchor="middle" fill="#F5F5F7" font-size="24" font-weight="700">Ethereum, Bitcoin</text>
+  <rect x="50" y="100" width="300" height="56" rx="12" fill="#1F1F27"/>
+  <text x="200" y="136" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="600">address = hash(key)</text>
+  <text x="200" y="200" text-anchor="middle" fill="#B9B9C6" font-size="18">Your public key stays hidden</text>
+  <text x="200" y="226" text-anchor="middle" fill="#B9B9C6" font-size="18">until the moment you spend.</text>
+  <text x="200" y="292" text-anchor="middle" fill="#F5E663" font-size="19" font-weight="700">A fresh address protects you.</text>
+  <text x="200" y="320" text-anchor="middle" fill="#8A8A99" font-size="16">This is what "bunker mode" relies on.</text>
+  <!-- card 2: Solana -->
+  <rect x="420" y="20" width="360" height="390" rx="22" fill="#121217"/>
+  <text x="600" y="66" text-anchor="middle" fill="#F5F5F7" font-size="24" font-weight="700">Solana today</text>
+  <rect x="450" y="100" width="300" height="56" rx="12" fill="#1F1F27"/>
+  <text x="600" y="136" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="600">address = key</text>
+  <text x="600" y="200" text-anchor="middle" fill="#B9B9C6" font-size="18">Your public key is published</text>
+  <text x="600" y="226" text-anchor="middle" fill="#B9B9C6" font-size="18">the moment you receive anything.</text>
+  <text x="600" y="292" text-anchor="middle" fill="#F52A86" font-size="19" font-weight="700">Fresh address: still exposed.</text>
+  <text x="600" y="320" text-anchor="middle" fill="#8A8A99" font-size="16">If the curve breaks, every wallet is open.</text>
+  <!-- card 3: QUBIT Vault -->
+  <rect x="820" y="20" width="360" height="390" rx="22" fill="#121217"/>
+  <rect x="820" y="20" width="360" height="390" rx="22" fill="none" stroke="url(#brand)" stroke-width="3"/>
+  <text x="1000" y="66" text-anchor="middle" fill="#F5F5F7" font-size="24" font-weight="700">QUBIT Vault</text>
+  <rect x="850" y="100" width="300" height="56" rx="12" fill="#1F1F27"/>
+  <text x="1000" y="136" text-anchor="middle" fill="#FFFFFF" font-size="19" font-weight="600">lock = hash(one-time key)</text>
+  <text x="1000" y="200" text-anchor="middle" fill="#B9B9C6" font-size="18">No public key on chain, ever.</text>
+  <text x="1000" y="226" text-anchor="middle" fill="#B9B9C6" font-size="18">Spending reveals one key, once.</text>
+  <text x="1000" y="292" text-anchor="middle" fill="#FBFE66" font-size="19" font-weight="700">Nothing left to attack.</text>
+  <text x="1000" y="320" text-anchor="middle" fill="#8A8A99" font-size="16">Only SHA-256, which Solana itself needs.</text>
+  <text x="600" y="446" text-anchor="middle" fill="#8A8A99" font-size="15">ECDSA and ed25519 are the elliptic-curve signatures behind every wallet today.</text>
+</svg>
