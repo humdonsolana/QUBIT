@@ -1,0 +1,14 @@
+{
+  "name": "qubit-launchpad",
+  "private": true,
+  "description": "Launch pump.fun coins whose mint addresses come from IBM quantum output.",
+  "scripts": {
+    "start": "node --no-warnings server.cjs"
+  },
+  "dependencies": {
+    "@pump-fun/pump-sdk": "4.0.0",
+    "@solana/spl-token": "0.4.14",
+    "@solana/web3.js": "1.98.4",
+    "bn.js": "5.2.2"
+  }
+}

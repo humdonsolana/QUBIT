@@ -8,3 +8,5 @@ mint_keypair.b58
 
 .venv*/
 __pycache__/
+
+node_modules/
